@@ -19,7 +19,7 @@ public class User {
     private String email;
     private String mobile;
 
-    @JsonIgnore
+    @JsonIgnore //this method not interrupt in save
     public boolean isNull(){
         return name!=null && email!=null && mobile!=null;
     }
