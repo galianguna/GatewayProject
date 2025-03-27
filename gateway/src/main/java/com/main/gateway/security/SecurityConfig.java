@@ -39,7 +39,7 @@ public class SecurityConfig {
         http
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .authorizeExchange(exchanges -> exchanges
-                        .pathMatchers("/GB/user/main").permitAll()
+                        .pathMatchers("/GB/user/main","/user/register").permitAll()
                         .anyExchange().authenticated()
                 )
                 .httpBasic(withDefaults());//Basic Auth enabled

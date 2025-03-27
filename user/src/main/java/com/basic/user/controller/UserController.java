@@ -20,6 +20,7 @@ public class UserController {
     public String main(){
         return "i'm the only one you can access without credentials!!";
     }
+
     @PostMapping
     public ResponseEntity<String> saveUser(@RequestBody User user){
         return userService.saveUser(user);

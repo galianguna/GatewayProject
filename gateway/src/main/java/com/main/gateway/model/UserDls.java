@@ -1,5 +1,6 @@
 package com.main.gateway.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,4 +26,10 @@ public class UserDls {
         this.password = password;
         this.role = role;
     }
+
+    @JsonIgnore //this method not interrupt in save
+    public boolean isNull(){
+        return user!=null && password!=null && role!=null;
+    }
+
 }
